@@ -1,4 +1,4 @@
-# 🚀 Ramya API — Docker & CI/CD Practice
+# 🚀 MY-API — Docker & CI/CD Practice
 
 A production-style Node.js REST API project created to practice **containerization, Git workflows, and Continuous Integration (CI)** using Docker and GitHub Actions.
 
@@ -8,7 +8,6 @@ The project demonstrates how application source code moves from a developer work
 
 ## 🏗️ Architecture
 
-```text
 Developer
     │
     │ git push
@@ -25,9 +24,6 @@ GitHub Actions
            │
            ▼
      Docker Image
-```
-
----
 
 ## 🛠️ Technology Stack
 
@@ -40,11 +36,9 @@ GitHub Actions
 | GitHub         | Repository hosting           |
 | GitHub Actions | Continuous Integration       |
 
----
 
 ## 📁 Project Structure
 
-```text
 ramya-api/
 │
 ├── .github/
@@ -57,7 +51,7 @@ ramya-api/
 ├── package-lock.json
 ├── server.js
 └── README.md
-```
+
 
 ---
 
@@ -65,59 +59,52 @@ ramya-api/
 
 ### 1. Clone the repository
 
-```bash
-git clone https://github.com/<your-username>/ramya-api.git
-cd ramya-api
-```
+git clone https://github.com/Theramya10/MY-api.git
+cd MY-api
+
 
 ### 2. Install dependencies
 
-```bash
 npm ci
-```
 
 ### 3. Start the application
 
-```bash
+
 node server.js
-```
+
 
 The application runs on:
 
-```text
-http://localhost:8080
-```
 
----
+http://localhost:8080
 
 ## 🐳 Run with Docker
 
 ### Build the image
 
-```bash
+
 docker build -t ramya-api:v1 .
-```
+
 
 ### Run the container
 
-```bash
+
 docker run -d \
   --name ramya-api \
   -p 8080:8080 \
   ramya-api:v1
-```
+
 
 ### Verify the container
 
-```bash
 docker ps
-```
+
 
 Test the application:
 
-```bash
+bash
 curl http://localhost:8080
-```
+
 
 ---
 
@@ -127,7 +114,7 @@ This repository uses **GitHub Actions** to automatically validate the Docker bui
 
 Workflow:
 
-```text
+*
 git push
    ↓
 GitHub Actions
@@ -137,15 +124,15 @@ Checkout source code
 Docker Build
    ↓
 Build successful / failed
-```
+
 
 Workflow file:
 
-```text
-.github/workflows/build.yml
-```
 
-The pipeline currently focuses on **CI validation**.
+.github/workflows/build.yml
+
+
+The pipeline currently focuses on CI validation.
 
 It does not push the image to a container registry or deploy the application.
 
@@ -168,16 +155,16 @@ The Docker image follows basic container security and optimization practices:
 
 Every push to the repository triggers the workflow:
 
-```yaml
+yaml
 on:
   push:
-```
+
 
 The GitHub-hosted Ubuntu runner executes:
 
-```bash
+bash
 docker build -t ramya-api:${{ github.sha }} .
-```
+
 
 A successful workflow confirms that the application can be packaged into a Docker image.
 
@@ -227,8 +214,24 @@ This project is designed to demonstrate practical understanding of:
 
 ## 👨‍💻 Author
 
-**Ramya**
+**Theramya10**
 
 DevOps / Cloud Engineering Practice Project
 
 > Building practical DevOps skills through hands-on infrastructure, containerization, automation, and CI/CD workflows.
+
+
+<p align="center">
+  <a href="https://www.facebook.com/theramya10">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook"/>
+  </a>
+  <a href="https://www.linkedin.com/in/theramya10">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
+  </a>
+  <a href="https://www.instagram.com/theramya10">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram"/>
+  </a>
+  <a href="https://x.com/theramya10">
+    <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X"/>
+  </a>
+</p>
